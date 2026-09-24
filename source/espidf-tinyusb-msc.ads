@@ -8,11 +8,19 @@ with ESPIDF.Wear_Levelling;
 
 package ESPIDF.TinyUSB.MSC is
 
+   type tinyusb_msc_mount_point_t is
+     (TINYUSB_MSC_STORAGE_MOUNT_USB,
+      TINYUSB_MSC_STORAGE_MOUNT_APP) with Convention => C;
+
    type tinyusb_msc_storage_config_t is limited private;
 
    procedure Set_wl_handle
      (Self : in out tinyusb_msc_storage_config_t;
       To   : ESPIDF.Wear_Levelling.wl_handle_t);
+
+   procedure Set_mount_point
+     (Self : in out tinyusb_msc_storage_config_t;
+      To   : tinyusb_msc_mount_point_t);
 
    type tinyusb_msc_storage_s is limited private;
 

@@ -8,6 +8,25 @@ with ESPIDF.Ada_ESP_Check_Error;
 
 package body ESPIDF.TinyUSB.MSC is
 
+   ---------------------
+   -- Set_mount_point --
+   ---------------------
+
+   procedure Set_mount_point
+     (Self : in out tinyusb_msc_storage_config_t;
+      To   : tinyusb_msc_mount_point_t)
+   is
+      procedure Imported
+        (Self : in out tinyusb_msc_storage_config_t;
+         To   : tinyusb_msc_mount_point_t)
+        with Import, Convention => C,
+             External_Name =>
+               "__ada_SET_tinyusb_msc_storage_config_mount_point";
+
+   begin
+      Imported (Self, To);
+   end Set_mount_point;
+
    -------------------
    -- Set_wl_handle --
    -------------------
