@@ -56,4 +56,16 @@ package body ESPIDF.TinyUSB.MSC is
       Ada_ESP_Check_Error (tinyusb_msc_new_storage_spiflash (config, handle));
    end tinyusb_msc_new_storage_spiflash;
 
+   -----------------------------------------
+   -- tinyusb_msc_set_storage_mount_point --
+   -----------------------------------------
+
+   procedure tinyusb_msc_set_storage_mount_point
+     (handle      : tinyusb_msc_storage_handle_t;
+      mount_point : tinyusb_msc_mount_point_t) is
+   begin
+      Ada_ESP_Check_Error
+        (tinyusb_msc_set_storage_mount_point (handle, mount_point));
+   end tinyusb_msc_set_storage_mount_point;
+
 end ESPIDF.TinyUSB.MSC;

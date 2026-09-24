@@ -37,6 +37,16 @@ package ESPIDF.TinyUSB.MSC is
      (config : tinyusb_msc_storage_config_t;
       handle : in out tinyusb_msc_storage_handle_t);
 
+   function tinyusb_msc_set_storage_mount_point
+     (handle      : tinyusb_msc_storage_handle_t;
+      mount_point : tinyusb_msc_mount_point_t) return esp_err_t
+     with Import, Convention => C,
+          External_Name => "tinyusb_msc_set_storage_mount_point";
+
+   procedure tinyusb_msc_set_storage_mount_point
+     (handle      : tinyusb_msc_storage_handle_t;
+      mount_point : tinyusb_msc_mount_point_t);
+
 private
 
    sizeof_tinyusb_msc_storage_config_t : constant int
