@@ -4,10 +4,16 @@
 --  SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 --
 
+with ESPIDF.Wear_Levelling;
+
 package ESPIDF.TinyUSB.MSC is
 
    type tinyusb_msc_storage_config_t is limited private;
-   
+
+   procedure Set_wl_handle
+     (Self : in out tinyusb_msc_storage_config_t;
+      To   : ESPIDF.Wear_Levelling.wl_handle_t);
+
    type tinyusb_msc_storage_s is limited private;
 
    type tinyusb_msc_storage_handle_t is access all tinyusb_msc_storage_s

@@ -19,3 +19,4 @@ generate_gpr = true
 
 [[depends-on]]
 espidf_tinyusb = "*"
+espidf_wear_levelling = "*"

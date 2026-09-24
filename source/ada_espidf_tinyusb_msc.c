@@ -7,3 +7,8 @@
 #include "tinyusb_msc.h"
 
 const int __ada_SIZEOF_tinyusb_msc_storage_config_t = sizeof(tinyusb_msc_storage_config_t);
+
+void __ada_SET_tinyusb_msc_storage_config_wl_handle(tinyusb_msc_storage_config_t *self, wl_handle_t to)
+{
+    self->medium.wl_handle = to;
+}
