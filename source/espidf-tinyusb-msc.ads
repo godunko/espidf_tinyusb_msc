@@ -18,6 +18,10 @@ package ESPIDF.TinyUSB.MSC is
      (Self : in out tinyusb_msc_storage_config_t;
       To   : ESPIDF.Wear_Levelling.wl_handle_t);
 
+   procedure Set_format_if_mount_failed
+     (Self : in out tinyusb_msc_storage_config_t;
+      To   : Boolean);
+
    procedure Set_mount_point
      (Self : in out tinyusb_msc_storage_config_t;
       To   : tinyusb_msc_mount_point_t);
