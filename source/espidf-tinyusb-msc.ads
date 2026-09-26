@@ -4,6 +4,7 @@
 --  SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 --
 
+with ESPIDF.C_Strings;
 with ESPIDF.Wear_Levelling;
 
 package ESPIDF.TinyUSB.MSC is
@@ -17,6 +18,10 @@ package ESPIDF.TinyUSB.MSC is
    procedure Set_wl_handle
      (Self : in out tinyusb_msc_storage_config_t;
       To   : ESPIDF.Wear_Levelling.wl_handle_t);
+
+   procedure Set_base_path
+     (Self : in out tinyusb_msc_storage_config_t;
+      To   : ESPIDF.C_Strings.const_char_ptr);
 
    procedure Set_format_if_mount_failed
      (Self : in out tinyusb_msc_storage_config_t;

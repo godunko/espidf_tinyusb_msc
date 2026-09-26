@@ -8,6 +8,24 @@ with ESPIDF.Ada_ESP_Check_Error;
 
 package body ESPIDF.TinyUSB.MSC is
 
+   -------------------
+   -- Set_base_path --
+   -------------------
+
+   procedure Set_base_path
+     (Self : in out tinyusb_msc_storage_config_t;
+      To   : ESPIDF.C_Strings.const_char_ptr)
+   is
+      procedure Imported
+        (Self : in out tinyusb_msc_storage_config_t;
+         To   : ESPIDF.C_Strings.const_char_ptr)
+        with Import, Convention => C,
+             External_Name => "__ada_SET_tinyusb_msc_storage_config_base_path";
+
+   begin
+      Imported (Self, To);
+   end Set_base_path;
+
    --------------------------------
    -- Set_format_if_mount_failed --
    --------------------------------
