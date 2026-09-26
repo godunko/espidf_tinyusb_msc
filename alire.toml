@@ -1,9 +1,13 @@
 name = "espidf_tinyusb_msc"
 version = "0.1.0-dev"
 website = "https://github.com/godunko/espidf_tinyusb_msc"
-description = "Ada/ESP-IDF: USB Device Stack bindings, Mass Storage Class"
+description = "Ada/ESP-IDF: TinyUSB Mass Storage Class bindings"
 long-description = """
-Ada bindings for the ESP-IDF `esp_tinyusb` component, wrapping the TinyUSB stack to enable USB Device capabilities on ESP32 microcontrollers.
+Ada bindings for the Mass Storage Class (MSC) part of Espressif's TinyUSB integration
+(`espressif/esp_tinyusb`).
+
+Covers creation of an MSC storage backed by a wear-levelled internal flash partition,
+and switching of its mount point between the application (VFS) and the USB host.
 """
 
 authors = ["Vadim Godunko"]
