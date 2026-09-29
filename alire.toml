@@ -1,5 +1,5 @@
 name = "espidf_tinyusb_msc"
-version = "0.1.0-dev"
+version = "0.1.0"
 website = "https://github.com/godunko/espidf_tinyusb_msc"
 description = "Ada/ESP-IDF: TinyUSB Mass Storage Class bindings"
 long-description = """
