@@ -22,5 +22,5 @@ generate_c = false
 generate_gpr = true
 
 [[depends-on]]
-espidf_tinyusb = "*"
-espidf_wear_levelling = "*"
+espidf_tinyusb = "^0.1.0"
+espidf_wear_levelling = "^0.1.0"
